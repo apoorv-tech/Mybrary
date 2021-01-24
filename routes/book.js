@@ -10,14 +10,17 @@ router.get('/',async(req,res)=> {
     if(req.query.title != null && req.query.title != ''){
         query = query.regex('title',new RegExp(req.query.title,'i'))
     }
-    if(req.query.publishedBefore != null && req.query.publishedBefore != ''){
-        query = query.lte('publishedDate',req.query.publishedBefore)
+    if(req.query.publishedbefore != null && req.query.publishedbefore != ''){
+        query = query.lte('publishedDate',req.query.publishedbefore)
     }
-    if(req.query.publishedAfter != null && req.query.publishedAfter != ''){
-        query = query.gte('publishedDate',req.query.publishedAfter)
+    if(req.query.publishedafter != null && req.query.publishedafter != ''){
+        query = query.gte('publishedDate',req.query.publishedafter)
     }
     try {
         const books = await query.exec()
+        books.forEach(book=>{
+            console.log(book.publishedDate)
+        })
         res.render('books/index',{
             books: books,
             searchOptions: req.query
@@ -41,7 +44,10 @@ router.post('/',async(req,res)=>{
         pageCount: req.body.pageCount,
         description: req.body.description,
     })
-    savecover(book,req.body.cover)
+
+    if(req.body.cover != null && req.body.cover !== ''){
+        savecover(book,req.body.cover)
+    }
 
     try {
         const newBook = await book.save()
@@ -70,10 +76,10 @@ async function renderFormPage(res,book,form,hasError= false){
         }
         if(hasError){
             if(form === 'edit'){
-                params.errorMessage = 'Error updating the book'
+                params.errorMessage = 'Error Updating the book'
             }
             else {
-                params.errorMessage = 'Error creating the book'
+                params.errorMessage = 'Error Creating the book'
             }
         }
         
