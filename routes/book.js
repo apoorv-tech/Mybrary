@@ -18,9 +18,6 @@ router.get('/',async(req,res)=> {
     }
     try {
         const books = await query.exec()
-        books.forEach(book=>{
-            console.log(book.publishedDate)
-        })
         res.render('books/index',{
             books: books,
             searchOptions: req.query
