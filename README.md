@@ -4,4 +4,4 @@ Tech Stack-<br>
 •	Databases- MONGODB<br>
 •	Server-side framework- Nodejs<br>
 •	Programming Languages- JAVASCRIPT<br>
-•	Frontend- Html, CSS, Bootstrap<br>
+•	Frontend- Html, CSS<br>
