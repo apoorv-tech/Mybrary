@@ -1,8 +1,7 @@
 # Mybrary
-Tech Stack-
-• Web Server-EXPRESS
-• Databases- MONGODB
-• Server-side framework- Nodejs
-• Programming Languages- JAVASCRIPT
-• Frontend- Html, CSS, Bootstrap
-• API – GOOGLE MAP API
+Tech Stack-<br>
+•	Web Server-EXPRESS<br>
+•	Databases- MONGODB<br>
+•	Server-side framework- Nodejs<br>
+•	Programming Languages- JAVASCRIPT<br>
+•	Frontend- Html, CSS, Bootstrap<br>
